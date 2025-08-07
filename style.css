@@ -119,3 +119,12 @@ footer {
   background-color: #0d0d11;
   border-top: 1px solid #1a1a1a;
 }
+
+.hero-logo {
+  width: 180px;
+  max-width: 80%;
+  margin-bottom: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
