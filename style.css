@@ -42,7 +42,7 @@ nav a:hover {
 .hero {
   text-align: center;
   padding: 120px 20px;
-  background: radial-gradient(circle at top left, #1a1a1a, #0f0f0f);
+  background: #141342;
 }
 
 .hero h1 {
@@ -83,7 +83,7 @@ nav a:hover {
   flex-wrap: wrap;
   gap: 40px;
   padding: 80px 20px;
-  background-color: #101015;
+  background-color: #141342;
 }
 
 .feature-box {
