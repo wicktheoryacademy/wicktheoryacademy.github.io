@@ -1,0 +1,126 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #141312;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #141312 !important;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid #2c2c2c;
+  z-index: 999;
+  position: relative;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Orbitron', sans-serif;
+  color: #f0f0f0;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #facc15;
+}
+
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  background: #141342;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-family: 'Orbitron', sans-serif;
+  color: #facc15;
+  margin-bottom: 20px;
+  text-shadow: none;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  color: #cccccc;
+}
+
+.hero-logo {
+  width: 350px;
+  max-width: 90%;
+  margin: 0 auto 30px auto;
+  display: block;
+}
+
+.btn {
+  background-color: #facc15;
+  color: #000;
+  padding: 14px 28px;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ffe478;
+  transform: translateY(-3px);
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 80px 20px;
+  background-color: #141342;
+}
+
+.feature-box {
+  background-color: #1a1a1f;
+  border: 1px solid #292929;
+  border-radius: 10px;
+  padding: 30px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-10px);
+}
+
+.feature-box h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #facc15;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.feature-box p {
+  color: #cccccc;
+  font-size: 0.95rem;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 14px;
+  color: #777;
+  background-color: #0d0d11;
+  border-top: 1px solid #1a1a1a;
+}
