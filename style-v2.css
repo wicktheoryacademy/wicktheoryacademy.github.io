@@ -22,9 +22,6 @@ header {
   z-index: 999;
   position: relative;
 }
-nav {
-  background-color: #141312 !important;
-}
 nav a {
   margin-left: 25px;
   text-decoration: none;
