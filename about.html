@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | WickTheory Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Orbitron:wght@600&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #141342;
+            color: #f0f0f0;
+            line-height: 1.6;
+            background-image: radial-gradient(rgba(250,204,21,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        header.contact-header {
+            background-color: #141342 !important;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 1px solid #141342;
+            z-index: 999;
+            position: relative;
+        }
+        .logo img { height: 45px; }
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Orbitron', sans-serif;
+            color: #f0f0f0;
+            transition: color 0.3s ease;
+        }
+        nav a:hover, nav a.active { color: #facc15; }
+
+        /* Hero Section */
+        .about-hero {
+            text-align: center;
+            padding: 50px 20px 40px;
+            position: relative;
+        }
+        .about-hero h1 {
+            font-size: 3rem;
+            font-family: 'Shadows Into Light', cursive;
+            color: #facc15;
+        }
+        .about-hero p {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #ccc;
+            max-width: 700px;
+            margin: 15px auto 0;
+        }
+
+        /* Section Layout */
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .about-text, .about-image {
+            flex: 1 1 450px;
+        }
+        .about-section:nth-child(even) .about-text { order: 2; }
+
+        .about-text h2 {
+            font-family: 'Shadows Into Light', cursive;
+            font-size: 2.2rem;
+            color: #facc15;
+            margin-bottom: 15px;
+        }
+        .about-text p, .about-text ul {
+            color: #ccc;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        .about-text ul { padding-left: 20px; }
+        .about-text ul li { margin-bottom: 8px; }
+
+        /* Candlestick Image Box */
+        .about-image {
+            text-align: center;
+        }
+        .about-image div {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, rgba(250,204,21,0.2), rgba(20,19,18,0.6)),
+                        url('https://i.ibb.co/SVsxz1c/candlestick-bg.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 14px;
+            color: #777;
+            background-color: #141342;
+            border-top: 1px solid #141342;
+        }
+    </style>
+</head>
+<body>
+
+<header class="contact-header">
+    <div class="logo">
+        <a href="index.html"><img src="WICK THEORY.png" alt="WickTheory Academy Logo"></a>
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="about-hero">
+    <h1>About WickTheory Academy</h1>
+    <p>Learn trading the right way — clear, practical, and proven.</p>
+</section>
+
+<section class="about-section">
+    <div class="about-text">
+        <h2>Our Mission</h2>
+        <p>WickTheory Academy was started to help people learn trading in a simple and practical way.
+        We focus only on strategies that work in live markets. No fake promises, no shortcuts — just skills that help you trade better.</p>
+    </div>
+    <div class="about-image"><div></div></div>
+</section>
+
+<section class="about-section">
+    <div class="about-text">
+        <h2>Our Mentor</h2>
+        <p>Akash has over 7 years of trading experience. Before he even placed his first trade, he spent 4 years only studying and researching the market — learning from different sources, testing ideas, and understanding what really works.</p>
+        <p>Over time, he combined the best parts of different strategies, removed what didn’t work, and built his own unique approach to trading. Today, Akash teaches Price Action and Smart Money Concepts (SMC) in a way that is clear, direct, and based on real results in the market.</p>
+    </div>
+    <div class="about-image"><div></div></div>
+</section>
+
+<section class="about-section">
+    <div class="about-text">
+        <h2>What We Teach</h2>
+        <p>We offer two focused courses:</p>
+        <ul>
+            <li><strong>Price Action</strong> — reading charts and market movements without relying on indicators.</li>
+            <li><strong>Smart Money Concepts (SMC)</strong> — understanding how big players move the market and using it to your advantage.</li>
+        </ul>
+    </div>
+    <div class="about-image"><div></div></div>
+</section>
+
+<section class="about-section">
+    <div class="about-text">
+        <h2>Why Learn With Us</h2>
+        <ul>
+            <li>Real trading experience — not just theory</li>
+            <li>Strategies tested in real markets</li>
+            <li>Clear and simple teaching style</li>
+            <li>Lifetime guidance after joining</li>
+        </ul>
+    </div>
+    <div class="about-image"><div></div></div>
+</section>
+
+<footer>
+    &copy; 2025 WickTheory Academy. All rights reserved.
+</footer>
+
+</body>
+</html>
