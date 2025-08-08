@@ -18,7 +18,7 @@ header {
   justify-content: flex-end;
   align-items: center;
   padding: 20px 40px;
-  border-bottom: 1px solid #2c2c2c;
+  border-bottom: 1px solid #141342;
   z-index: 999;
   position: relative;
 }
@@ -121,5 +121,5 @@ footer {
   font-size: 14px;
   color: #777;
   background-color: #141342;
-  border-top: 1px solid #1a1a1a;
+  border-top: 1px solid #141342;
 }
