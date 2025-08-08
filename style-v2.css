@@ -132,7 +132,7 @@ footer {
 /* Contact Page Styles */
 .contact-hero {
   text-align: center;
-  padding: 80px 20px 40px;
+  padding: 40px 20px 20px;
   background-color: #141342;
 }
 
@@ -156,7 +156,7 @@ footer {
 .contact-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 20px 20px;
   text-align: center;
 }
 
