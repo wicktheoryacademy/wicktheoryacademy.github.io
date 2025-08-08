@@ -10,6 +10,8 @@ body {
   background-color: #141342;
   color: #f0f0f0;
   line-height: 1.6;
+  background-image: radial-gradient(rgba(250,204,21,0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 header {
