@@ -216,6 +216,16 @@ footer {
   transform: translateY(-2px);
 }
 
+.contact-header {
+  display: flex;
+  justify-content: space-between; /* logo left, nav right */
+  align-items: center;
+}
+
+.contact-header .logo {
+  margin-right: auto; /* pushes nav away */
+}
+
 /* Social Media Icons */
 .contact-socials {
   margin-top: 50px;
