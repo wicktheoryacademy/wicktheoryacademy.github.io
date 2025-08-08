@@ -144,10 +144,10 @@ footer {
 }
 
 .contact-hero p {
+  font-size: 1.3rem;
+  font-weight: 500;
   color: #ccc;
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
+  margin-top: 10px;
 }
 
 .contact-container {
@@ -201,16 +201,15 @@ footer {
   margin-top: 50px;
 }
 
-.social-icon {
-  font-size: 2rem;
-  margin: 0 10px;
-  color: #f0f0f0;
-  text-decoration: none;
-  transition: color 0.3s ease;
+.social-icon img {
+  width: 40px;
+  height: 40px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
 }
 
-.social-icon:hover {
-  color: #facc15;
+.social-icon img:hover {
+  filter: brightness(0) invert(1) drop-shadow(0 0 5px #facc15);
 }
 
 /* Thank You Page */
