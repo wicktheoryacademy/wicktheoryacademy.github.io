@@ -7,13 +7,13 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #141312;
+  background-color: #141342;
   color: #f0f0f0;
   line-height: 1.6;
 }
 
 header {
-  background-color: #141312 !important;
+  background-color: #141342 !important;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -120,6 +120,6 @@ footer {
   padding: 40px 20px;
   font-size: 14px;
   color: #777;
-  background-color: #0d0d11;
+  background-color: #141342;
   border-top: 1px solid #1a1a1a;
 }
