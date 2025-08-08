@@ -1,4 +1,4 @@
-
+  
 * {
   margin: 0;
   padding: 0;
@@ -224,6 +224,10 @@ footer {
 
 .contact-header .logo {
   margin-right: auto; /* pushes nav away */
+}
+
+.contact-header .logo img {
+  height: 45px; /* smaller size */
 }
 
 /* Social Media Icons */
