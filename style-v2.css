@@ -272,3 +272,85 @@ footer {
   color: #ccc;
   margin-bottom: 30px;
 }
+
+
+
+/* ====== Responsive Design ====== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav a {
+    margin: 10px;
+  }
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+  .feature-box {
+    width: 90%;
+  }
+  .contact-form {
+    max-width: 90%;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav a {
+    font-size: 0.9rem;
+    margin: 8px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .features {
+    padding: 40px 10px;
+  }
+  .feature-box {
+    width: 100%;
+  }
+  .contact-container {
+    padding: 10px;
+  }
+  .contact-form {
+    margin: 20px auto;
+    padding: 15px;
+  }
+}
+
+/* Extra small mobiles */
+@media (max-width: 480px) {
+  header {
+    padding: 10px 15px;
+  }
+  nav a {
+    font-size: 0.8rem;
+    margin: 5px;
+  }
+  .hero-logo {
+    width: 180px;
+  }
+  .contact-header .logo img {
+    height: 80px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+}
