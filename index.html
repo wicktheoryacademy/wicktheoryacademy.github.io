@@ -520,7 +520,7 @@ const locations = [
 // Your academy courses
 const products = [
     " enrolled in our Price Action Course",
-    " enquired abour our academy",
+    " enquired about our academy",
     " booked a place in the wick lounge",
     " enrolled in our Smart Money Course",
     " inquired regarding our location",
@@ -542,7 +542,7 @@ function showFomo() {
 
     const product = products[Math.floor(Math.random() * products.length)];
     
-    fomoBox.innerHTML = `Someone from <strong>${location}</strong> just enrolled in our <strong>${product}</strong>`;
+    fomoBox.innerHTML = `📢 Someone from <strong>${location}</strong> just enrolled in our <strong>${product}</strong>`;
     
     fomoBox.classList.add("fomo-show");
 
@@ -563,6 +563,7 @@ setTimeout(showFomo, 7000);
 
 </body>
 </html>
+
 
 
 
