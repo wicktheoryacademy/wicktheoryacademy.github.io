@@ -505,79 +505,58 @@
                 <p>© 2025 Wick Theory Academy. All rights reserved.</p>
             </div>
         </div>
-</footer>
-
-<style>
-.fomo-notification {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background: rgba(17,17,17,0.85);
-  color: #fff;
-  padding: 12px 16px;
-  border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-  font-size: 14px;
-  max-width: 250px;
-  z-index: 9999;
-}
-section {
-  position: relative; /* needed so absolute positioning works inside */
-}
-</style>
-
-<!-- Notification box (only ONE in your HTML) -->
-<div id="fomoBox" class="fomo-notification" style="display:none;"></div>
-
-<script>
-const messages = [
-  "📢 Someone from Surat just joined our course!",
-  "📢 A student from Varachha signed up!",
-  "📢 Someone from Adajan booked a seat!"
+    <div id="fomo" class="fomo-notification">
+    Someone from Adajan just enrolled in our Price Action Course
+    </div>
+    <script>
+// Surat localities
+const locations = [
+    "Adajan", "Vesu", "Katargam", "Athwa", "Piplod", 
+    "Varachha", "Rander", "Pal", "Nanpura", "Udhna", 
+    "Sachin", "Parle Point", "Bhatar", "Dumas"
 ];
 
-let index = 0;
-function showFomoIn(section) {
-  const fomoBox = document.getElementById('fomoBox');
-  section.appendChild(fomoBox);
-  fomoBox.textContent = messages[index];
-  fomoBox.style.display = 'block';
+// Your academy courses
+const products = [
+    "Price Action Course",
+    "Candlestick Mastery",
+    "Swing Trading Bootcamp",
+    "Day Trading Secrets"
+];
 
-  setTimeout(() => {
-    fomoBox.style.display = 'none';
-    index = (index + 1) % messages.length;
-  }, 3000);
-}
+let lastLocation = "";
+const fomoBox = document.getElementById("fomo");
 
-function getCurrentSection() {
-  const sections = document.querySelectorAll('section');
-  let current = sections[0];
-  let minDistance = Infinity;
-  
-  sections.forEach(sec => {
-    const rect = sec.getBoundingClientRect();
-    const distance = Math.abs(rect.top);
-    if (distance < minDistance && rect.top < window.innerHeight) {
-      minDistance = distance;
-      current = sec;
-    }
-  });
-  
-  return current;
-}
+function showFomo() {
+    let location;
+    do {
+        location = locations[Math.floor(Math.random() * locations.length)];
+    } while (location === lastLocation); // avoid repeating same place
+    lastLocation = location;
 
-function cycleFomo() {
-  const section = getCurrentSection();
-  showFomoIn(section);
-  setTimeout(cycleFomo, 5000); // show next in 5s
-}
-
-cycleFomo();
-</script>
-        
+    const product = products[Math.floor(Math.random() * products.length)];
     
+    fomoBox.innerHTML = `Someone from <strong>${location}</strong> just enrolled in our <strong>${product}</strong>`;
+    
+    fomoBox.classList.add("fomo-show");
+
+    // Hide after 5 seconds
+    setTimeout(() => {
+        fomoBox.classList.remove("fomo-show");
+    }, 5000);
+}
+
+// Show every 12 seconds
+setInterval(showFomo, 5000);
+
+// Show first one after 3 seconds
+setTimeout(showFomo, 3000);
+</script>
+
+</footer>
 
 </body>
 </html>
+
 
 
