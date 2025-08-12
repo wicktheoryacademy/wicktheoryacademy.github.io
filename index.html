@@ -46,6 +46,46 @@
         .delay-1 { animation-delay: 0.2s; }
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
+
+        /* FOMO bubble styles */
+        .fomo-notification {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background: white;
+        color: black;
+        padding: 12px 16px;
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        z-index: 9999;
+        max-width: 250px;
+        border: 1px solid #ddd;
+        position: relative;
+        }
+
+        /* Tail for the bubble */
+        .fomo-notification::after {
+        content: "";
+        position: absolute;
+        bottom: -8px; /* move under the bubble */
+        left: 20px; /* adjust tail position */
+        border-width: 8px;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+        filter: drop-shadow(0 -1px 1px rgba(0,0,0,0.1)); /* tiny shadow for realism */
+        }
+
+        /* Show animation */
+        .fomo-show {
+        opacity: 1;
+        transform: translateY(0);
+        }
+
     </style>
 </head>
 <body class="bg-gray-50 font-sans">
@@ -466,39 +506,59 @@
             </div>
         </div>
 </footer>
+<div id="fomo" class="fomo-notification">
+    Someone from Adajan just enrolled in our Price Action Course
+</div>
+<script>
+// Surat localities
+const locations = [
+    "Adajan", "Vesu", "Katargam", "Athwa", "Piplod", 
+    "Varachha", "Rander", "Pal", "Nanpura", "Udhna", 
+    "Sachin", "Parle Point", "Bhatar", "Dumas", "City Light", "Palanpur", "Kamrej", "Palsana"
+];
+
+// Your academy courses
+const products = [
+    " enrolled in our Price Action Course",
+    " enquired abour our academy",
+    " booked a place in the wick lounge",
+    " enrolled in our Smart Money Course",
+    " inquired regarding our location",
+    " booked an appointment",
+    " acquired a space in our wick lounge",
+    " is joining us for our 6 week course",
+    " enrolled for our dual course",
+];
+
+let lastLocation = "";
+const fomoBox = document.getElementById("fomo");
+
+function showFomo() {
+    let location;
+    do {
+        location = locations[Math.floor(Math.random() * locations.length)];
+    } while (location === lastLocation); // avoid repeating same place
+    lastLocation = location;
+
+    const product = products[Math.floor(Math.random() * products.length)];
+    
+    fomoBox.innerHTML = `Someone from <strong>${location}</strong> just <strong>${product}</strong>`;
+    
+    fomoBox.classList.add("fomo-show");
+
+    // Hide after 5 seconds
+    setTimeout(() => {
+        fomoBox.classList.remove("fomo-show");
+    }, 5000);
+}
+
+// Show every 60 seconds
+setInterval(showFomo, 60000);
+
+// Show first one after 5 seconds
+setTimeout(showFomo, 5000);
+</script>
 
     </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
