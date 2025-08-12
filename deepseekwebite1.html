@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wick Theory Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for animations and effects */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-input:focus {
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-chart-line text-blue-500 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-900">Wick Theory Academy</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#home" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">About</a>
+                    <a href="#courses" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Courses</a>
+                    <a href="#contact" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact Us</a>
+                    <a href="#courses" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Enroll Now</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">About</a>
+                <a href="#courses" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Courses</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Contact Us</a>
+                <a href="#courses" class="block w-full text-center bg-blue-600 text-white px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Enroll Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="relative bg-gradient-to-r from-blue-800 to-blue-600 text-white py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                    <div class="mb-12 lg:mb-0 fade-in">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-6">Master the Markets with Wick Theory Academy</h1>
+                        <p class="text-xl mb-8 text-blue-100">Unlock the secrets of Price Action and Smart Money Concepts to trade like institutional traders.</p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#courses" class="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-md text-lg font-semibold transition duration-300 text-center">Explore Courses</a>
+                            <a href="#contact" class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 py-3 rounded-md text-lg font-semibold transition duration-300 text-center">Get in Touch</a>
+                        </div>
+                    </div>
+                    <div class="fade-in delay-1">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Trading charts" 
+                             class="rounded-lg shadow-2xl border-4 border-white">
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-50 to-transparent"></div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">About Wick Theory Academy</h2>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                </div>
+                
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                    <div class="mb-12 lg:mb-0 fade-in delay-1">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="About us" 
+                             class="rounded-lg shadow-xl">
+                    </div>
+                    <div class="fade-in delay-2">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-6">Our Mission</h3>
+                        <p class="text-gray-600 mb-6">At Wick Theory Academy, we're dedicated to transforming retail traders into disciplined market participants who understand and can anticipate institutional trading behavior.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
+                                        <i class="fas fa-chart-bar text-xl"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Market Structure Expertise</h4>
+                                    <p class="mt-1 text-gray-600">We teach how to read market structure like the pros, identifying key levels and institutional footprints.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
+                                        <i class="fas fa-brain text-xl"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Psychology First</h4>
+                                    <p class="mt-1 text-gray-600">Trading is 80% psychology. We focus on developing the right mindset for consistent profitability.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
+                                        <i class="fas fa-users text-xl"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Community Support</h4>
+                                    <p class="mt-1 text-gray-600">Join our exclusive community of traders where we share ideas, analysis, and support each other's growth.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Premium Courses</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Master the markets with our comprehensive trading education programs</p>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Price Action Course -->
+                    <div class="course-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 fade-in delay-1">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Price Action Course" 
+                                 class="w-full h-48 object-cover">
+                            <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                Best Seller
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-2">
+                                <div class="flex items-center text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="text-gray-600 ml-2">4.8 (256 reviews)</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Price Action Mastery</h3>
+                            <p class="text-gray-600 mb-4">Learn to read price like a book, identify high-probability setups, and trade with the precision of professional traders.</p>
+                            
+                            <div class="mb-6">
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm font-medium text-gray-900">Course Progress</span>
+                                    <span class="text-sm font-medium text-blue-600">8 Weeks</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Candlestick Patterns</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Support/Resistance</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Market Structure</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Risk Management</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-2xl font-bold text-gray-900">$497</span>
+                                    <span class="text-sm text-gray-500 line-through ml-2">$997</span>
+                                </div>
+                                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition duration-300">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- SMC Course -->
+                    <div class="course-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 fade-in delay-2">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="SMC Course" 
+                                 class="w-full h-48 object-cover">
+                            <div class="absolute top-4 right-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                Advanced
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-2">
+                                <div class="flex items-center text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-gray-600 ml-2">5.0 (189 reviews)</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Smart Money Concepts (SMC)</h3>
+                            <p class="text-gray-600 mb-4">Decode institutional order flow, identify liquidity pools, and learn to trade alongside smart money for maximum profitability.</p>
+                            
+                            <div class="mb-6">
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm font-medium text-gray-900">Course Progress</span>
+                                    <span class="text-sm font-medium text-blue-600">12 Weeks</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Order Flow</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Liquidity Concepts</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Institutional Footprints</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Advanced Risk Management</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-2xl font-bold text-gray-900">$797</span>
+                                    <span class="text-sm text-gray-500 line-through ml-2">$1497</span>
+                                </div>
+                                <a href="#contact" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-md font-medium transition duration-300">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-16 fade-in delay-3">
+                    <p class="text-gray-600 mb-6">Not sure which course is right for you?</p>
+                    <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gray-800 hover:bg-gray-900 transition duration-300">
+                        Get Personalized Advice
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Success Stories</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Hear from our students who transformed their trading</p>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md fade-in delay-1">
+                        <div class="flex items-center mb-4">
+                            <img class="w-12 h-12 rounded-full object-cover" src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J.">
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Sarah J.</h4>
+                                <p class="text-gray-600">Forex Trader</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-2">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-gray-600">"The Price Action course completely changed how I view the markets. I went from consistently losing to having 3 profitable months in a row. The community support is incredible!"</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md fade-in delay-2">
+                        <div class="flex items-center mb-4">
+                            <img class="w-12 h-12 rounded-full object-cover" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T.">
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Michael T.</h4>
+                                <p class="text-gray-600">Crypto Trader</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-2">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-gray-600">"The SMC course was worth every penny. Learning to spot institutional order flow has given me an edge I never thought possible as a retail trader. My win rate improved by 40%."</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md fade-in delay-3">
+                        <div class="flex items-center mb-4">
+                            <img class="w-12 h-12 rounded-full object-cover" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Priya K.">
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Priya K.</h4>
+                                <p class="text-gray-600">Swing Trader</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-2">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star-half-alt text-yellow-400"></i>
+                        </div>
+                        <p class="text-gray-600">"I took both courses and the transformation in my trading psychology has been remarkable. I'm now consistently profitable and have the confidence to scale my account properly."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="py-20 bg-gray-900 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12">
+                    <div class="mb-12 lg:mb-0 fade-in">
+                        <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
+                        <p class="text-gray-300 mb-8">Have questions about our courses? Want personalized advice on which program is right for you? Fill out the form and we'll get back to you within 24 hours.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-md bg-blue-600 text-white">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </div
+</body>
+</html>
