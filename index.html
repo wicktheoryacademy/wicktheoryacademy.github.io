@@ -513,15 +513,20 @@
 const locations = [
     "Adajan", "Vesu", "Katargam", "Athwa", "Piplod", 
     "Varachha", "Rander", "Pal", "Nanpura", "Udhna", 
-    "Sachin", "Parle Point", "Bhatar", "Dumas"
+    "Sachin", "Parle Point", "Bhatar", "Dumas", "City Light", "Palanpur", "Kamrej", "Palsana"
 ];
 
 // Your academy courses
 const products = [
-    "Price Action Course",
-    "Candlestick Mastery",
-    "Swing Trading Bootcamp",
-    "Day Trading Secrets"
+    " enrolled in our Price Action Course",
+    " enquired abour our academy",
+    " booked a place in the wick lounge",
+    " enrolled in our Smart Money Course",
+    " inquired regarding our location",
+    " booked an appointment",
+    " acquired a space in our wick lounge",
+    " is joining us for our 6 week course",
+    " enrolled for our dual course"
 ];
 
 let lastLocation = "";
@@ -540,23 +545,24 @@ function showFomo() {
     
     fomoBox.classList.add("fomo-show");
 
-    // Hide after 5 seconds
+    // Hide after 7 seconds
     setTimeout(() => {
         fomoBox.classList.remove("fomo-show");
-    }, 5000);
+    }, 7000);
 }
 
-// Show every 12 seconds
-setInterval(showFomo, 5000);
+// Show every 60 seconds
+setInterval(showFomo, 60000);
 
-// Show first one after 3 seconds
-setTimeout(showFomo, 3000);
+// Show first one after 7 seconds
+setTimeout(showFomo, 7000);
 </script>
 
 </footer>
 
 </body>
 </html>
+
 
 
 
