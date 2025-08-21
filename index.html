@@ -542,7 +542,7 @@ function showFomo() {
 
     const product = products[Math.floor(Math.random() * products.length)];
     
-    fomoBox.innerHTML = `📢 Someone from <strong>${location}</strong> just enrolled in our <strong>${product}</strong>`;
+    fomoBox.innerHTML = `📢 Someone from <strong>${location}</strong> just <strong>${product}</strong>`;
     
     fomoBox.classList.add("fomo-show");
 
@@ -583,6 +583,7 @@ menuLinks.forEach(link => {
         
 </body>
 </html>
+
 
 
 
