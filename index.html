@@ -87,6 +87,29 @@
         }
 
     </style>
+
+    <script>
+// Disable right click
+document.addEventListener("contextmenu", event => event.preventDefault());
+
+// Disable common key shortcuts (Ctrl+U, Ctrl+S, Ctrl+Shift+I, F12)
+document.addEventListener("keydown", function(e) {
+    if (e.ctrlKey && (e.key === "u" || e.key === "s" || e.key === "U" || e.key === "S")) {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "i" || e.key === "J" || e.key === "j")) {
+        e.preventDefault();
+    }
+    if (e.key === "F12") {
+        e.preventDefault();
+    }
+});
+
+// Disable text selection
+document.addEventListener("selectstart", e => e.preventDefault());
+    </script>
+
+    
 </head>
 <body class="bg-gray-50 font-sans">
     <!-- Navigation -->
@@ -583,6 +606,7 @@ menuLinks.forEach(link => {
         
 </body>
 </html>
+
 
 
 
