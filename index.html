@@ -490,7 +490,105 @@ document.addEventListener("selectstart", e => e.preventDefault());
             </div>
             
         </section>
-    
+ 
+        <!-- Referral Section -->
+        <section id="referral" class="mb-20" data-aos="fade-up">
+            <div class="max-w-4xl mx-auto">
+                <div class="referral-card rounded-xl p-8 md:p-10">
+                    <div class="flex flex-col md:flex-row items-center justify-between mb-8">
+                        <div>
+                            <h2 class="text-2xl md:text-3xl font-bold mb-2">Refer Friends, Earn Rewards</h2>
+                            <p class="text-gray-300">Share your referral code and get exclusive benefits when your friends join.</p>
+                        </div>
+                        <div class="mt-6 md:mt-0 flex items-center space-x-2 bg-indigo-900/50 px-4 py-2 rounded-full">
+                            <i data-feather="award" class="text-yellow-400"></i>
+                            <span class="font-medium">Your Rewards: <span id="rewardPoints">0</span> points</span>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Referral Code Box -->
+                        <div class="bg-gray-900 rounded-lg p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="font-bold text-lg">Your Referral Code</h3>
+                                <div class="text-xs bg-indigo-900/50 px-2 py-1 rounded">Active</div>
+                            </div>
+                            <div id="registrationForm" class="bg-gray-800 rounded-lg p-4 mb-4">
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm text-gray-400 mb-1">Full Name</label>
+                                        <input type="text" id="studentName" class="w-full bg-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm text-gray-400 mb-1">Mobile Number</label>
+                                        <input type="tel" id="studentMobile" class="w-full bg-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                    </div>
+                                    <button id="generateCodeBtn" class="w-full bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded font-medium">
+                                        Generate My Referral Code
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="codeDisplay" class="hidden bg-gray-800 rounded-lg p-4 mb-4">
+                                <div class="flex justify-between items-center">
+                                    <span id="referralCode" class="font-mono text-lg"></span>
+                                    <button id="copyBtn" class="copy-btn bg-indigo-600 hover:bg-indigo-700 px-3 py-1 rounded text-sm flex items-center">
+                                        <i data-feather="copy" class="w-4 h-4 mr-1"></i> Copy
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-400">Complete registration to get your unique referral code. Share it with friends to earn rewards!</p>
+                        </div>
+
+                        <!-- How It Works -->
+                        <div>
+                            <h3 class="font-bold text-lg mb-4">How It Works</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="bg-indigo-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                                        <span class="text-xs font-bold">1</span>
+                                    </div>
+                                    <p>Share your unique referral code with friends</p>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="bg-indigo-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                                        <span class="text-xs font-bold">2</span>
+                                    </div>
+                                    <p>Your friend signs up using your code</p>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="bg-indigo-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                                        <span class="text-xs font-bold">3</span>
+                                    </div>
+                                    <p>You both receive rewards when they purchase a course</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-8">
+                                <h4 class="font-bold mb-3">Share via:</h4>
+                                <div class="flex space-x-3">
+                                    <button class="bg-blue-600 hover:bg-blue-700 p-2 rounded-full">
+                                        <i data-feather="facebook" class="w-5 h-5"></i>
+                                    </button>
+                                    <button class="bg-blue-400 hover:bg-blue-500 p-2 rounded-full">
+                                        <i data-feather="twitter" class="w-5 h-5"></i>
+                                    </button>
+                                    <button id="emailShareBtn" class="bg-gray-700 hover:bg-gray-600 p-2 rounded-full">
+                                        <i data-feather="mail" class="w-5 h-5"></i>
+                                    </button>
+                                    <button class="bg-green-500 hover:bg-green-600 p-2 rounded-full">
+                                        <i data-feather="message-square" class="w-5 h-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+               
+
+
+        
 <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-8">
@@ -602,10 +700,109 @@ menuLinks.forEach(link => {
 });
 </script>
 
+
+  <script>
+        // Initialize animations and icons
+        AOS.init();
+        feather.replace();
+
+        // Store referrals in local storage
+        let referrals = JSON.parse(localStorage.getItem('referrals')) || [];
+        const referralTableBody = document.getElementById('referralTableBody');
+        
+        // Function to update the referral table
+        function updateReferralTable() {
+            referralTableBody.innerHTML = '';
+            referrals.forEach(ref => {
+                const row = document.createElement('tr');
+                row.className = 'border-b border-gray-800';
+                row.innerHTML = `
+                    <td class="py-3">${ref.name}</td>
+                    <td class="py-3">${ref.email}</td>
+                    <td class="py-3">${new Date(ref.date).toLocaleDateString()}</td>
+                    <td class="py-3"><span class="bg-${ref.status === 'Completed' ? 'green' : 'yellow'}-900 text-${ref.status === 'Completed' ? 'green' : 'yellow'}-300 px-2 py-1 rounded-full text-xs">${ref.status}</span></td>
+                `;
+                referralTableBody.appendChild(row);
+            });
+        }
+
+        // Generate unique referral code
+        document.getElementById('generateCodeBtn').addEventListener('click', function() {
+            const name = document.getElementById('studentName').value.trim();
+            const mobile = document.getElementById('studentMobile').value.trim();
+            
+            if (!name || !mobile) {
+                alert('Please enter both name and mobile number');
+                return;
+            }
+
+            // Generate unique code
+            const randomPart = Math.floor(1000 + Math.random() * 9000);
+            const nameInitials = name.split(' ').map(n => n[0]).join('').toUpperCase();
+            const referralCode = `WICK-${nameInitials}${randomPart}`;
+            
+            // Display the code
+            document.getElementById('referralCode').textContent = referralCode;
+            document.getElementById('registrationForm').classList.add('hidden');
+            document.getElementById('codeDisplay').classList.remove('hidden');
+            
+            // Send email to admin with student details
+            const adminEmail = 'wicktheory19@gmail.com'; // REPLACE THIS WITH YOUR EMAIL
+            const subject = `New Referral Code Generated - ${referralCode}`;
+            const body = `A new student has generated a referral code:\n\n` +
+                        `Name: ${name}\n` +
+                        `Mobile: ${mobile}\n` +
+                        `Referral Code: ${referralCode}\n\n` +
+                        `Date: ${new Date().toLocaleString()}`;
+            
+            // Create hidden form to submit the email
+            const form = document.createElement('form');
+            form.style.display = 'none';
+            form.method = 'POST';
+            form.action = 'https://formsubmit.co/wicktheory19@gmail.com'; // Using Formspree as email service
+            
+            const subjectField = document.createElement('input');
+            subjectField.type = 'hidden';
+            subjectField.name = '_subject';
+            subjectField.value = subject;
+            form.appendChild(subjectField);
+            
+            const bodyField = document.createElement('input');
+            bodyField.type = 'hidden';
+            bodyField.name = 'message';
+            bodyField.value = body;
+            form.appendChild(bodyField);
+            
+            document.body.appendChild(form);
+            form.submit();
+
+            // Copy functionality
+            document.getElementById('copyBtn').addEventListener('click', function() {
+                navigator.clipboard.writeText(referralCode).then(() => {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i data-feather="check" class="w-4 h-4 mr-1"></i> Copied!';
+                    feather.replace();
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        feather.replace();
+                    }, 2000);
+                });
+            });
+
+            // Update reward points
+            let points = referrals.reduce((sum, ref) => sum + (ref.points || 0), 0);
+            document.getElementById('rewardPoints').textContent = points;
+        });
+
+    </script>
+
+
+
         
         
 </body>
 </html>
+
 
 
 
