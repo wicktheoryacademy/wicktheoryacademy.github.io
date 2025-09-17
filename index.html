@@ -563,24 +563,6 @@ document.addEventListener("selectstart", e => e.preventDefault());
                                     <p>You both receive rewards when they purchase a course</p>
                                 </div>
                             </div>
-
-                            <div class="mt-8">
-                                <h4 class="font-bold mb-3">Share via:</h4>
-                                <div class="flex space-x-3">
-                                    <button class="bg-blue-600 hover:bg-blue-700 p-2 rounded-full">
-                                        <i data-feather="facebook" class="w-5 h-5"></i>
-                                    </button>
-                                    <button class="bg-blue-400 hover:bg-blue-500 p-2 rounded-full">
-                                        <i data-feather="twitter" class="w-5 h-5"></i>
-                                    </button>
-                                    <button id="emailShareBtn" class="bg-gray-700 hover:bg-gray-600 p-2 rounded-full">
-                                        <i data-feather="mail" class="w-5 h-5"></i>
-                                    </button>
-                                    <button class="bg-green-500 hover:bg-green-600 p-2 rounded-full">
-                                        <i data-feather="message-square" class="w-5 h-5"></i>
-                                    </button>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -789,10 +771,6 @@ menuLinks.forEach(link => {
                     }, 2000);
                 });
             });
-
-            // Update reward points
-            let points = referrals.reduce((sum, ref) => sum + (ref.points || 0), 0);
-            document.getElementById('rewardPoints').textContent = points;
         });
 
     </script>
@@ -803,6 +781,7 @@ menuLinks.forEach(link => {
         
 </body>
 </html>
+
 
 
 
