@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -772,6 +773,12 @@ menuLinks.forEach(link => {
             bodyField.name = 'message';
             bodyField.value = body;
             form.appendChild(bodyField);
+
+            const captchaField = document.createElement('input');
+            captchaField.type = 'hidden';
+            captchaField.name = "_captcha";
+            captchaField.value = "false";
+            form.appendChild(captchaField);
             
             document.body.appendChild(form);
             form.submit();
@@ -798,6 +805,7 @@ menuLinks.forEach(link => {
         
 </body>
 </html>
+
 
 
 
